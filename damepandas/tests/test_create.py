@@ -45,7 +45,3 @@ class TestBasics(TestCase):
         df = pd.DataFrame(np.random.randn(6,4), index=dates, columns=list('ABCD'))
         self.assertTrue(len(df) > 0)
 
-    def test_to_pydatetime(self):
-        datetimes = ['Jun 1 2005  1:33PM', 'Aug 28 1999 12:00AM']
-        datetimetolist = pd.to_datetime(datetimes).to_pydatetime().tolist()
-        self.assertEqual([datetime.datetime(2005, 6, 1, 13, 33), datetime.datetime(1999, 8, 28, 0, 0)], datetimetolist)
