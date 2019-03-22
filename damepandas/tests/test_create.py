@@ -26,7 +26,7 @@ from unittest import TestCase
 import numpy as np
 import pandas as pd
 
-class TestBasics(TestCase):
+class TestCreate(TestCase):
 
     def test_series(self):
         s1 = pd.Series(['a', 'b'])
