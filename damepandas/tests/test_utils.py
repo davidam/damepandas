@@ -31,3 +31,11 @@ class TestBasics(TestCase):
     def test_column_names(self):
         data = pd.read_csv('files/brain_size.csv', sep=';', na_values=".")
         self.assertEqual(['Row', 'Gender', 'FSIQ', 'VIQ', 'PIQ', 'Weight', 'Height', 'MRI_Count'], list(data.columns))
+
+    def test_column_unique(self):
+        data = pd.read_csv('files/brain_size.csv', sep=';', na_values=".")
+        self.assertEqual(list(data['Gender'].unique()), ["Female", "Male"])
+
+    def test_one_column(self):
+        data = pd.read_csv('files/brain_size.csv', sep=';', na_values=".")
+        self.assertEqual(list(data['Gender']), ['Female', 'Male', 'Male', 'Male', 'Female', 'Female', 'Female', 'Female', 'Male', 'Male', 'Female', 'Male', 'Male', 'Female', 'Female', 'Female', 'Female', 'Male', 'Female', 'Male', 'Male', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Female', 'Female', 'Male', 'Male', 'Male', 'Female', 'Female', 'Male', 'Female', 'Male', 'Male'])
