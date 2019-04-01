@@ -1,4 +1,4 @@
-"";"Gender";"FSIQ";"VIQ";"PIQ";"Weight";"Height";"MRI_Count"
+"Row";"Gender";"FSIQ";"VIQ";"PIQ";"Weight";"Height";"MRI_Count"
 "1";"Female";133;132;124;"118";"64.5";816932
 "2";"Male";140;150;124;".";"72.5";1001121
 "3";"Male";139;123;150;"143";"73.3";1038437
