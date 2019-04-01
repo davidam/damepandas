@@ -18,3 +18,16 @@ $ nosetests3 tests/test_create.py
 #+BEGIN_SRC
 $ nosetests3 tests/test_create.py:TestCreate.test_series
 #+END_SRC
+* Packaging stuff
+To install from local: 
+$ pip install -e .
+
+To install create tar.gz in dist directory: 
+$ python3 setup.py register sdist
+
+To upload to pypi: 
+$ twine upload dist/damepandas-0.1.tar.gz
+
+To install from Internet: 
+$ pip3 install damepandas
+
