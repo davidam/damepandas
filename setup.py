@@ -23,7 +23,7 @@
 
 import os
 import re
-
+from os import path
 from setuptools import setup
 
 # def readme():
