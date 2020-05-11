@@ -31,11 +31,11 @@ from setuptools import setup
 #         return f.read()
 
 this_directory = path.abspath(path.dirname(__file__))
-with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setup(name='damepandas',
-      version='0.0.8',
+      version='0.0.9',
       description='Learning Pandas from Tests by David Arroyo Menéndez',
       long_description=long_description,
       long_description_content_type='text/markdown',
