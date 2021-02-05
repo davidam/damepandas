@@ -35,7 +35,7 @@ with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setup(name='damepandas',
-      version='0.0.9',
+      version='0.0.10',
       description='Learning Pandas from Tests by David Arroyo Menéndez',
       long_description=long_description,
       long_description_content_type='text/markdown',
