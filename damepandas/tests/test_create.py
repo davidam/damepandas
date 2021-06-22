@@ -48,10 +48,10 @@ class TestCreate(TestCase):
 
     def test_range(self):
         dates = pd.date_range('20130101', periods=6)
-        string1 = "'2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',\n"
-        string1 = string1 + "'2013-01-05', '2013-01-06'"
-        res = DatetimeIndex([string1], dtype='datetime64[ns]', freq='D')
-        self.assertEqual(res, repr(dates))
+        string1 = "DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',\n"
+        string1 = string1 + "               '2013-01-05', '2013-01-06'],\n"
+        string1 = string1 + "              dtype='datetime64[ns]', freq='D')"
+        self.assertEqual(string1, repr(dates))
         self.assertTrue(len(dates) > 0)
 
     def test_fill_random(self):
