@@ -26,10 +26,20 @@ from unittest import TestCase
 import numpy as np
 import pandas as pd
 
+
 class TestBasics(TestCase):
 
     def test_json(self):
-        df = pd.DataFrame([['a', 'b'], ['c', 'd']], index=['row 1', 'row 2'], columns=['col 1', 'col 2'])
-        self.assertEqual(df.to_json(orient='split'), '{"columns":["col 1","col 2"],"index":["row 1","row 2"],"data":[["a","b"],["c","d"]]}')
-        self.assertEqual(df.to_json(orient='index'), '{"row 1":{"col 1":"a","col 2":"b"},"row 2":{"col 1":"c","col 2":"d"}}')
-        self.assertEqual(df.to_json(orient='records'), '[{"col 1":"a","col 2":"b"},{"col 1":"c","col 2":"d"}]')
+        df = pd.DataFrame([['a', 'b'], ['c', 'd']],
+                          index=['row 1', 'row 2'],
+                          columns=['col 1', 'col 2'])
+        string1 = '{"columns":["col 1","col 2"],'
+        string1 = string1 + '"index":["row 1","row 2"],'
+        string1 = string1 + '"data":[["a","b"],["c","d"]]}'
+        self.assertEqual(df.to_json(orient='split'), string1)
+        string2 = '{"row 1":{"col 1":"a","col 2":"b"},'
+        string2 = string2 + '"row 2":{"col 1":"c","col 2":"d"}}'
+        self.assertEqual(df.to_json(orient='index'), string2)
+        string3 = '[{"col 1":"a","col 2":"b"},'
+        string3 = string3 + '{"col 1":"c","col 2":"d"}]'
+        self.assertEqual(df.to_json(orient='records'), string3)
