@@ -26,6 +26,7 @@ from unittest import TestCase
 import numpy as np
 import pandas as pd
 
+
 class TestBasics(TestCase):
 
     def test_concat(self):
@@ -37,5 +38,3 @@ class TestBasics(TestCase):
         data = pd.read_csv('files/brain_size.csv', sep=';', na_values=".")
         self.assertEqual(data.shape[0], 40)    # 40 rows and 8 columns
         self.assertEqual(data.shape[1], 8)    # 40 rows and 8 columns
-
-        
