@@ -35,7 +35,7 @@ with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setup(name='damepandas',
-      version='0.0.10',
+      version='0.1.1',
       description='Learning Pandas from Tests by David Arroyo Menéndez',
       long_description=long_description,
       long_description_content_type='text/markdown',
@@ -54,6 +54,7 @@ setup(name='damepandas',
       package_dir={'damepandas': 'damepandas', 'damepandas.tests': 'damepandas/tests', 'damepandas.files': 'damepandas/files'},
       package_data={'damepandas.tests': ['*'],
                     'damepandas.files': ['*']},
+      data_files=[('damepandas', ['damepandas/files/brain_size.csv', 'damepandas/files/pima-indians-diabetes.data.csv'])],
       install_requires=[
           'markdown',
           'numpy',
