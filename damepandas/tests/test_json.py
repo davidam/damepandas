@@ -22,6 +22,8 @@
 # Boston, MA 02110-1301 USA,
 
 from unittest import TestCase
+import collections
+collections.Callable = collections.abc.Callable
 
 import numpy as np
 import pandas as pd
