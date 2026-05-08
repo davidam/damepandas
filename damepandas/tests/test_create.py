@@ -63,3 +63,7 @@ class TestCreate(TestCase):
                           index=dates,
                           columns=list('ABCD'))
         self.assertTrue(len(df) > 0)
+
+    def test_dataframe_from_csv(self):
+        df = pd.read_csv('files/breast-cancer.csv')
+        self.assertTrue(len(df) > 100)
